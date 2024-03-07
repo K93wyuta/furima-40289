@@ -24,11 +24,11 @@
 | (images)        | has_one_attachedにて実装 | null: false                   |
 | name            | string                  | null: false                   |
 | description     | text                    | null: false                   |
-| category_id     | string                  | null: false                   |
-| condition_id    | string                  | null: false                   |
-| charge_id       | string                  | null: false                   |
-| prefecture_id   | string                  | null: false                   |
-| delivery_day_id | string                  | null: false                   |
+| category_id     | integer                 | null: false                   |
+| condition_id    | integer                 | null: false                   |
+| charge_id       | integer                 | null: false                   |
+| prefecture_id   | integer                 | null: false                   |
+| delivery_day_id | integer                 | null: false                   |
 | price           | integer                 | null: false                   |
 | user            | references              | null: false,foreign_key: true |
 
@@ -47,30 +47,25 @@
 ### テーブル
 | Column  | Type       | Options                                      |
 | ------- | ---------- | -------------------------------------------- |
-| seller  | references | null: false,foreign_key:{ to_table: :users } |
 | buyer   | references | null: false,foreign_key:{ to_table: :users } |
 | item    | references | null: false,foreign_key: true                |
-| address | references | null: false,foreign_key: true                |
 
 ### Association
 - belongs_to :buyer, class_name: 'User'
-- belongs_to :seller, class_name: 'User'
 - belongs_to :item
-- belongs_to :address
 
 ## addressモデル
 ### テーブル
 | Column        | Type    | Options     |
 | ------------- | ------- | ------------|
-| postcode      | integer | null: false |
-| prefecture_id | string  | null: false |
+| postcode      | string  | null: false |
+| prefecture_id | integer | null: false |
 | city          | string  | null: false |
 | block         | string  | null: false |
-| building      | string  | null: false |
-| phone_number  | integer | null: false |
+| building      | string  |             |
+| phone_number  | string  | null: false |
 
 ### Association
-- has_many   :records
 - belongs_to :prefecture
 
 ## ActiveHash
