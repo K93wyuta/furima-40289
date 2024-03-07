@@ -24,56 +24,16 @@
 | (images)     | has_one_attachedにて実装 | null: false                   |
 | name         | string                  | null: false                   |
 | description  | text                    | null: false                   |
-| category     | references              | null: false,foreign_key: true |
-| condition    | references              | null: false,foreign_key: true |
-| charge       | references              | null: false,foreign_key: true |
-| delivery_day | references              | null: false,foreign_key: true |
+| category     | string                  | null: false                   |
+| condition    | string                  | null: false                   |
+| charge       | string                  | null: false                   |
+| delivery_day | string                  | null: false                   |
 | price        | integer                 | null: false                   |
 | user         | references              | null: false,foreign_key: true |
 
 ### Association
 - belongs_to :users
-- has_many   :categories
-- has_many   :conditions
-- has_many   :charges
-- has_many   :delivery_days
 - has_one    :records
-
-## categoriesテーブル
-### テーブル
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-- belongs_to :items
-
-## conditionsテーブル
-### テーブル
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-- belongs_to :items
-
-## chargesテーブル
-### テーブル
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-- belongs_to :items
-
-## delivery_daysテーブル
-### テーブル
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-- belongs_to :items
 
 ## recordsテーブル
 ### テーブル
@@ -92,24 +52,14 @@
 
 ## addressesテーブル
 ### テーブル
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| postcode     | integer    | null: false                    |
-| prefecture   | references | null: false,foreign_key: true  |
-| city         | string     | null: false                    |
-| block        | string     | null: false                    |
-| building     | string     | null: false                    |
-| phone_number | integer    | null: false                    |
+| Column       | Type    | Options     |
+| ------------ | ------- | ------------|
+| postcode     | integer | null: false |
+| prefecture   | string  | null: false |
+| city         | string  | null: false |
+| block        | string  | null: false |
+| building     | string  | null: false |
+| phone_number | integer | null: false |
 
 ### Association
 - has_many   :records
-- belongs_to :prefectures
-
-## prefecturesテーブル
-### テーブル
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-- belongs_to :addresses
