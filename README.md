@@ -21,7 +21,7 @@
 ### テーブル
 | Column          | Type                    | Options                       |
 | --------------- | ----------------------- | ----------------------------- |
-| (images)        | has_one_attachedにて実装 | null: false                   |
+| (image)        | has_one_attachedにて実装 | null: false                   |
 | name            | string                  | null: false                   |
 | description     | text                    | null: false                   |
 | category_id     | integer                 | null: false                   |
@@ -56,14 +56,15 @@
 
 ## addressモデル
 ### テーブル
-| Column        | Type    | Options     |
-| ------------- | ------- | ------------|
-| postcode      | string  | null: false |
-| prefecture_id | integer | null: false |
-| city          | string  | null: false |
-| block         | string  | null: false |
-| building      | string  |             |
-| phone_number  | string  | null: false |
+| Column        | Type       | Options                       |
+| ------------- | ---------- | ------------------------------|
+| postcode      | string     | null: false                   |
+| prefecture_id | integer    | null: false                   |
+| city          | string     | null: false                   |
+| block         | string     | null: false                   |
+| building      | string     |                               |
+| phone_number  | string     | null: false                   |
+| record        | references | null: false,foreign_key: true |
 
 ### Association
 - belongs_to :prefecture
