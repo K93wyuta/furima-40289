@@ -1,4 +1,4 @@
-window.addEventListener("turbo:load", () => {
+const autofill = () => {
   const priceInput = document.getElementById("item-price");
   priceInput.addEventListener("input",() => {
     const inputValue = priceInput.value;
@@ -9,4 +9,6 @@ window.addEventListener("turbo:load", () => {
     addTaxDom.innerHTML = `${fee}`;
     addProfit.innerHTML = `${profit}`;
   });
-})
+};
+
+window.addEventListener("turbo:load", autofill);
