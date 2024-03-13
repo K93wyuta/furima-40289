@@ -112,7 +112,6 @@ GEM
       romaji
     globalid (1.2.1)
       activesupport (>= 6.1)
-<<<<<<< HEAD
     gon (6.4.0)
       actionpack (>= 3.0.20)
       i18n (>= 0.7)
@@ -122,10 +121,13 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
+<<<<<<< Updated upstream
 =======
 >>>>>>> parent of 2d3a6a7 (購入フォームの実装)
 =======
 >>>>>>> parent of b211997 (カード決済処理)
+=======
+>>>>>>> Stashed changes
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -159,6 +161,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.22.2)
     msgpack (1.7.2)
+    multi_json (1.15.0)
     mysql2 (0.5.6)
     net-imap (0.4.10)
       date
@@ -229,6 +232,8 @@ GEM
     regexp_parser (2.9.0)
     reline (0.4.3)
       io-console (~> 0.5)
+    request_store (1.6.0)
+      rack (>= 1.4)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -324,6 +329,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   gimei
+  gon
   image_processing (~> 1.2)
   importmap-rails
   jbuilder

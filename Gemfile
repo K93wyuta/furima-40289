@@ -86,12 +86,12 @@ gem 'devise'
 gem 'active_hash'
 
 gem 'mini_magick'
-<<<<<<< HEAD
 gem 'image_processing', '~> 1.2'
 
 <<<<<<< HEAD
 gem 'gon'
 
+<<<<<<< Updated upstream
 gem 'payjp'
 =======
 gem 'image_processing', '~> 1.2'
@@ -99,3 +99,6 @@ gem 'image_processing', '~> 1.2'
 =======
 gem 'gon'
 >>>>>>> parent of b211997 (カード決済処理)
+=======
+gem 'payjp'
+>>>>>>> Stashed changes
