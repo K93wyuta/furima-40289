@@ -14,18 +14,30 @@ class OrdersController < ApplicationController
 >>>>>>> Stashed changes
 
   def index
+<<<<<<< Updated upstream
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
+=======
+    gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+>>>>>>> Stashed changes
     @order = Order.new
   end
 
   def create
+<<<<<<< Updated upstream
+=======
+    @item = Item.find(params[:item_id])
+>>>>>>> Stashed changes
     @order = Order.new(order_params)
     if @order.valid?
       pay_item
       @order.save
       redirect_to root_path
     else
+<<<<<<< Updated upstream
       gon.public_key = ENV['PAYJP_PUBLIC_KEY']
+=======
+      gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
+>>>>>>> Stashed changes
       render :index, status: :unprocessable_entity
     end
   end
@@ -34,10 +46,24 @@ class OrdersController < ApplicationController
 
   def order_params
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     params.require(:order).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(
       buyer_id: current_user.id, item_id: params[:item_id], token: params[:token]
 =======
     params.require(:order).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(buyer_id: current_user.id, item_id: params[:item_id] ,token: params[:token])
+=======
+    params.require(:order).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(buyer_id: current_user.id, item_id: params[:item_id] ,token: params[:token])
+  end
+
+  def pay_item
+    item = Item.find(order_params[:item_id])
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp::Charge.create(
+      amount: item.price,
+      card: order_params[:token],
+      currency:'jpy'
+    )
+>>>>>>> Stashed changes
   end
 
   def set_order
