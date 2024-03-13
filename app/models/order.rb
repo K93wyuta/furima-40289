@@ -4,12 +4,12 @@ class Order
   with_options presence: true do
     validates :buyer_id
     validates :item_id
-    validates :postcode
+    validates :postcode,format: { with: /\A\d{3}-\d{4}\z/ }
     validates :prefecture_id, numericality: { only_integer: true, other_than: 1, message: "can't be blank" }
     validates :city
     validates :block
     # validates :building
-    validates :phone_number
+    validates :phone_number,format: { with: /\A\d{10,11}\z/ }
     validates :token
   end
 
