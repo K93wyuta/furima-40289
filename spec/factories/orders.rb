@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :order do
-<<<<<<< Updated upstream
     postcode { '000-0000' }
     prefecture_id { Faker::Number.between(from: 2, to: 48) }
     city { '川崎市' }
@@ -9,13 +8,4 @@ FactoryBot.define do
     token { 'tok_abcdefghijk00000000000000000' }
   end
 end
-=======
-    postcode { "000-0000" }
-    prefecture_id { Faker::Number.between(from: 2, to: 48) }
-    city { "川崎市" }
-    block { "宮前区" }
-    phone_number { "00000000000" }
-    token { "tok_abcdefghijk00000000000000000" }
-  end
-end
->>>>>>> Stashed changes
+

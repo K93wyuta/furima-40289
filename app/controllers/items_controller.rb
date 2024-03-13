@@ -54,26 +54,10 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
-  def move_to_index
-    return unless Record.exists?(item_id: @item.id) || current_user != @item.user
-
-    redirect_to root_path
-  end
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
 
   def move_to_index
     if Record.exists?(item_id: @item.id) || current_user != @item.user
       redirect_to root_path
     end
   end
-  
->>>>>>> Stashed changes
 end

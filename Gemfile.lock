@@ -121,16 +121,6 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
-<<<<<<< Updated upstream
-=======
->>>>>>> parent of 2d3a6a7 (購入フォームの実装)
-<<<<<<< Updated upstream
-=======
->>>>>>> parent of b211997 (カード決済処理)
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -181,8 +171,6 @@ GEM
     netrc (0.11.0)
     nio4r (2.7.0)
     nokogiri (1.16.2-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.24.0)
@@ -332,7 +320,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-23
-  x86_64-linux
 
 DEPENDENCIES
   active_hash

@@ -89,18 +89,4 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
 gem 'gon'
-
-<<<<<<< Updated upstream
 gem 'payjp'
-=======
-gem 'image_processing', '~> 1.2'
->>>>>>> parent of 2d3a6a7 (購入フォームの実装)
-<<<<<<< Updated upstream
-=======
-gem 'gon'
->>>>>>> parent of b211997 (カード決済処理)
-=======
-gem 'payjp'
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
