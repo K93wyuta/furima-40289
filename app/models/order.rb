@@ -1,7 +1,6 @@
 class Order
   include ActiveModel::Model
-  attr_accessor :buyer_id, :item_id, :postcode, :prefecture_id, :city, :block, :building, :phone_number, :record_id
-
+  attr_accessor :buyer_id, :item_id, :postcode, :prefecture_id, :city, :block, :building, :phone_number, :record_id ,:token
   with_options presence: true do
     validates :buyer_id
     validates :item_id
@@ -11,10 +10,11 @@ class Order
     validates :block
     # validates :building
     validates :phone_number
-    validates :record_id
+    validates :token
   end
+
   def save
-    order = Order.create(buyer_id: user_id, item_id: item_id)
-    Address.create(postcode: postcode, prefecture_id: prefecture_id, city: city, block: block, building: building, phone_number: phone_number, record_id: record_id, buyer_id: user.id, item_id: item.id)
+    record = Record.create(buyer_id: buyer_id, item_id: item_id)
+    Address.create(postcode: postcode, prefecture_id: prefecture_id, city: city, block: block, building: building, phone_number: phone_number, record_id: record.id )
   end
 end
