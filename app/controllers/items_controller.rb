@@ -57,6 +57,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 
   def move_to_index
@@ -64,5 +65,7 @@ class ItemsController < ApplicationController
 
     redirect_to root_path
   end
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 end

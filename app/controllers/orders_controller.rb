@@ -1,14 +1,20 @@
 class OrdersController < ApplicationController
+<<<<<<< Updated upstream
   before_action :authenticate_user!
   before_action :set_order, only: [:index, :create]
   before_action :move_to_index, only: [:index, :create]
+=======
+  before_action :authenticate_user!, except: :index
+>>>>>>> Stashed changes
 
   def index
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @order = Order.new
+    @item = Item.find(params[:item_id])
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @order = Order.new(order_params)
     if @order.valid?
       pay_item
@@ -28,6 +34,7 @@ class OrdersController < ApplicationController
     )
   end
 
+<<<<<<< Updated upstream
   def set_order
     @item = Item.find(params[:item_id])
   end
@@ -38,6 +45,8 @@ class OrdersController < ApplicationController
     redirect_to root_path
   end
 
+=======
+>>>>>>> Stashed changes
   def pay_item
     item = Item.find(order_params[:item_id])
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
