@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   before_action :authenticate_user!
   before_action :set_order, only: [:index, :create]
   before_action :move_to_index, only: [:index, :create]
@@ -39,12 +40,30 @@ class OrdersController < ApplicationController
       gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
 >>>>>>> Stashed changes
       render :index, status: :unprocessable_entity
+=======
+  before_action :authenticate_user!, except: :index
+
+  def index
+    @order = Order.new
+    @item = Item.find(params[:item_id])
+  end
+
+  def create
+    binding.pry
+    @order = Order.new(order_params)
+    if @order.valid?
+      @order.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+>>>>>>> Stashed changes
     end
   end
 
   private
 
   def order_params
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     params.require(:order).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(
@@ -110,3 +129,9 @@ class OrdersController < ApplicationController
     )
   end
 end
+=======
+    params.require(:order).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number, :record_id, :buyer_id, :item_id)
+  end
+
+end
+>>>>>>> Stashed changes
