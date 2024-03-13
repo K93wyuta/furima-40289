@@ -86,8 +86,12 @@ gem 'devise'
 gem 'active_hash'
 
 gem 'mini_magick'
+<<<<<<< HEAD
 gem 'image_processing', '~> 1.2'
 
 gem 'gon'
 
 gem 'payjp'
+=======
+gem 'image_processing', '~> 1.2'
+>>>>>>> parent of 2d3a6a7 (購入フォームの実装)

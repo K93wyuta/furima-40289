@@ -30,9 +30,17 @@
         <p class="or-text">or</p>
         <%= link_to "削除", item_path(@item.id), data: { turbo_method: :delete }, class:"item-destroy" %>
       <% else %>
+<<<<<<< HEAD
         <%= link_to "購入画面に進む", item_orders_path(@item.id), data: { turbo: false }, class:"item-red-btn" %>
+=======
+        <%= link_to "購入画面に進む", "#" ,class:"item-red-btn"%>
+>>>>>>> parent of 2d3a6a7 (購入フォームの実装)
       <% end %>
     <% end %>
+
+    <%# 商品が売れていない場合はこちらを表示しましょう %>
+    <%# link_to "購入画面に進む", "#" ,class:"item-red-btn"%>
+    <%# //商品が売れていない場合はこちらを表示しましょう %>
 
     <div class="item-explain-box">
       <span><%= @item.description %></span>
