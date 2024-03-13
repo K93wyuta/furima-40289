@@ -30,17 +30,10 @@
       </p>
     </div>
     <%# /支払額の表示 %>
-
-<<<<<<< HEAD
-    <%= form_with model: [@item,@order], id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
-<<<<<<< HEAD
     <%= render 'shared/error_messages', model: f.object %>
 
-=======
     <%= form_with id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
->>>>>>> parent of 2d3a6a7 (購入フォームの実装)
-=======
->>>>>>> parent of b211997 (カード決済処理)
+
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
