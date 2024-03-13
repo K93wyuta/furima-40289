@@ -56,8 +56,9 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    return unless Record.exists?(item_id: @item.id) || current_user != @item.user
-
-    redirect_to root_path
+    if Record.exists?(item_id: @item.id) || current_user != @item.user
+      redirect_to root_path
+    end
   end
+  
 end
