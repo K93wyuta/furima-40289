@@ -13,3 +13,4 @@ const autofill = () => {
 };
 
 window.addEventListener("turbo:load", autofill);
+window.addEventListener("turbo:render", autofill);
